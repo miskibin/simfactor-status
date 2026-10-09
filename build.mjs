@@ -55,7 +55,7 @@ document.getElementById("f").addEventListener("submit",async e=>{e.preventDefaul
   const ok=await tryPw(document.getElementById("pw").value,document.getElementById("rem").checked);
   if(!ok){b.disabled=false;b.textContent="Otwórz raport";document.getElementById("err").textContent="Nieprawidłowe hasło.";}
 });
-(async()=>{let p=null;if(location.hash.startsWith("#k=")){const k=decodeURIComponent(location.hash.slice(3));history.replaceState(null,"",location.pathname);if(await tryPw(k,true))return;document.getElementById("err").textContent="Klucz w linku jest nieprawidłowy.";}
+(async()=>{let p=null;if(location.hash.startsWith("#k=")){const k=decodeURIComponent(location.hash.slice(3));history.replaceState(null,"",location.pathname);const g=document.getElementById("go");g.disabled=true;g.textContent="Otwieram…";if(await tryPw(k,true))return;g.disabled=false;g.textContent="Otwórz raport";document.getElementById("err").textContent="Klucz w linku jest nieprawidłowy.";}
   try{p=localStorage.getItem("sf_pw")}catch(e){}
   if(p&&!(await tryPw(p,false))){try{localStorage.removeItem("sf_pw")}catch(e){}}})();
 })();
