@@ -19,9 +19,12 @@ const page = `<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>SimFactor — raport z postępu</title>
+<meta name="color-scheme" content="only light">
+<script>(function(){var t="light";try{if(localStorage.getItem("sf_status_theme")==="dark")t="dark"}catch(e){}document.documentElement.setAttribute("data-theme",t);var m=document.querySelector('meta[name="color-scheme"]');if(m)m.setAttribute("content",t==="dark"?"dark":"only light")})();</script>
 <style>
 :root{--bg:#fbfaf7;--ink:#1f1e1b;--ink3:#8a867c;--line:#e4e0d6;--accent:#2c55c8;--res:#bf3b27}
-@media (prefers-color-scheme: dark){:root{--bg:#151513;--ink:#ece9e1;--ink3:#848176;--line:#33322d;--accent:#86a3f6;--res:#ef806c}}
+:root{color-scheme:light}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#151513;--ink:#ece9e1;--ink3:#848176;--line:#33322d;--accent:#86a3f6;--res:#ef806c}
 *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:16px}
 form{width:100%;max-width:360px}h1{font:700 24px/1.2 Georgia,serif;margin:0 0 6px}p{color:var(--ink3);margin:0 0 20px;font-size:14px}
 input[type=password]{width:100%;font:inherit;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:transparent;color:var(--ink)}
